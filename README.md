@@ -1,126 +1,36 @@
-
-# Habitica 2.0
-
-> Turn your goals into an adventure.
-
-
-## Preview
-
-The page is structured as a product landing experience with a live dashboard embedded directly into the journey:
-
-- A cinematic hero with interactive daily tasks and clear calls to action
-- A playable productivity dashboard with tasks, inventory, party, and achievements views
-- XP, gold, streak, level-up, and boss-damage feedback loops
-- Habit, daily, and to-do task types with different rewards
-- Character class selection across Warrior, Mage, Rogue, and Healer
-- Gear inspection and equip interactions
-- A progress timeline showing how a productive day unfolds
-- A comparison section positioning Habitica against traditional productivity tools
-- A keyboard-triggered secret quest with confetti, sound, and temporary golden mode
-
-All interactions are intentionally local and demo-oriented. There is no authentication, database, or external API in this assessment build.
-
-## Tech Stack
-
-- **Next.js 16** with the App Router
-- **React 19** and TypeScript
-- **Tailwind CSS 4** for responsive styling
-- **Framer Motion** for entrances, transitions, and reward animations
-- **Lucide React** for interface icons
-- **Canvas Confetti** for the hidden quest reward
-- **Web Audio API** for lightweight synthesized feedback sounds
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Requirements
-
-- Node.js 20 or newer
-- npm 10 or newer
-
-### Installation
-
-```bash
-npm install
-```
-
-### Run locally
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in a browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Production build
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-npm run build
-npm run start
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Quality checks
+## Learn More
 
-```bash
-npm run lint
-```
+To learn more about Next.js, take a look at the following resources:
 
-## Interaction Notes
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-1. Use **Start Your Quest** or **Explore Live Demo** to move through the experience.
-2. Complete tasks in the hero or dashboard to see XP, gold, streak, and boss health update.
-3. Open the dashboard tabs to inspect inventory, party, and achievement states.
-4. Select gear to view its details, then equip available items.
-5. Sound effects are enabled by default and can be toggled from the interface. The preference is stored in `localStorage`.
-6. For the hidden quest, enter the Konami Code: `Up Up Down Down Left Right Left Right B A`.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-The audio system initializes after the first pointer or keyboard interaction to comply with browser autoplay policies.
+## Deploy on Vercel
 
-## Project Structure
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```text
-src/
-├── app/
-│   ├── globals.css       # Global theme, effects, and responsive styles
-│   ├── layout.tsx        # Metadata, fonts, and root document layout
-│   └── page.tsx          # Page composition and cross-section navigation
-├── components/
-│   ├── HeroSection.tsx
-│   ├── ProductShowcase.tsx
-│   ├── WhyItWorks.tsx
-│   ├── DayTimeline.tsx
-│   ├── ProductComparison.tsx
-│   ├── FinalCTA.tsx
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   └── EasterEggModal.tsx
-├── hooks/
-│   └── useKonamiCode.ts  # Keyboard sequence and secret-mode state
-└── utils/
-    └── audio.ts          # Web Audio API sound synthesizer
-```
-
-## Design And Implementation Decisions
-
-### Feedback makes productivity feel tangible
-
-The central interaction is deliberately immediate: completing a task produces visible rewards, updates the character state, damages the boss, and plays a short audio cue. This creates a clear cause-and-effect loop without requiring a backend.
-
-### A focused visual system
-
-The interface combines a dark cosmic environment with amber reward accents, purple progression states, and restrained glass surfaces. Plus Jakarta Sans handles interface content, while Cinzel and JetBrains Mono provide RPG and telemetry accents.
-
-### Responsive by default
-
-The layout is built around stacked mobile flows and expands into denser dashboard compositions at larger breakpoints. Primary controls remain reachable, and interactive elements include visible focus states for keyboard users.
-
-### Progressive enhancement for delight
-
-Confetti and synthesized sound enhance successful actions but do not carry essential information. The core product narrative and task state remain understandable through the visual UI alone.
-
-## Scope And Next Steps
-
-This assessment focuses on the experience layer and intentionally uses seeded client-side state. A production version would add authenticated persistence, server-backed task data, real party collaboration, error/loading states, analytics, and automated component or end-to-end tests.
-
-## License
-
-This is an assessment project and is not affiliated with or endorsed by Habitica.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
